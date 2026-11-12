@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        form {
+            background-color: white;
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #message {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>College Event Registration</h1>
+
+    <h3>Event Details</h3>
+    <p><b>Event:</b> Tech Fest 2026</p>
+    <p><b>Date:</b> 20 November 2026</p>
+    <p><b>Venue:</b> College Auditorium</p>
+    <p><b>Time:</b> 10 AM - 4 PM</p>
+
+    <h3>Registration Form</h3>
+
+    <form id="myForm">
+
+        <input type="text" placeholder="Enter Name" required>
+
+        <input type="email" placeholder="Enter Email" required>
+
+        <input type="tel" placeholder="Enter Phone Number"
+        pattern="[0-9]{10}" required>
+
+        <select required>
+            <option value="">Select Department</option>
+            <option>CSE</option>
+            <option>ECE</option>
+            <option>EEE</option>
+            <option>IT</option>
+            <option>Mechanical</option>
+        </select>
+
+        <select required>
+            <option value="">Select Event</option>
+            <option>Web Development Workshop</option>
+            <option>AI and ML Seminar</option>
+            <option>Coding Competition</option>
+            <option>Project Expo</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <h3 id="message"></h3>
+
+    <script>
+        document.getElementById("myForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            document.getElementById("message").innerHTML =
+            "Registration Successful!";
+
+        });
+    </script>
+
+</body>
+</html>
